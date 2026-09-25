@@ -279,4 +279,13 @@ footer {
     .featured h2 {
         font-size: 40px;
     }
+    /* Article images */
+    article img,
+    .article-content img {
+        display: block;
+        width: 100%;
+        max-width: 760px;
+        height: auto;
+        margin: 30px auto;
+}
 }
