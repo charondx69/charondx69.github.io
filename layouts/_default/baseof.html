@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ if .Title }}{{ .Title }} — {{ end }}{{ site.Title }}
+    </title>
+
+    <meta name="description" content="{{ site.Params.description }}">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header class="masthead">
+
+    <div class="topline">
+        <span>VOL. I</span>
+        <span>NO. 01</span>
+        <span>{{ now.Format "02 JANUARY 2006" }}</span>
+    </div>
+
+    <div class="masthead-title">
+        NOTES FROM THE ABYSS
+    </div>
+
+    <div class="subtitle">
+        A JOURNAL OF THOUGHT, OBSERVATION, LITERATURE & THE HUMAN CONDITION
+    </div>
+
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/posts/">ARCHIVE</a>
+        <a href="/about/">ABOUT</a>
+    </nav>
+
+</header>
+
+<main>
+    {{ block "main" . }}{{ end }}
+</main>
+
+<footer>
+
+    <div class="footer-rule"></div>
+
+    <p>
+        NOTES FROM THE ABYSS
+    </p>
+
+    <p class="byline">
+        Edited & written by Hannibal Lecter
+    </p>
+
+    <p class="copyright">
+        © {{ now.Format "2006" }} Notes from the Abyss
+    </p>
+
+</footer>
+
+</body>
+</html>

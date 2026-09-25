@@ -1,0 +1,144 @@
+{{ define "main" }}
+
+<section class="edition">
+
+    <div class="edition-label">
+        THE LATEST EDITION
+    </div>
+
+    <h1 class="hero-title">
+        NOTES FROM THE ABYSS
+    </h1>
+
+    <p class="hero-description">
+        Essays on existence, literature, culture, technology,
+        psychology and the strange business of being human.
+    </p>
+
+</section>
+
+<div class="newspaper-grid">
+
+    <section class="main-column">
+
+        {{ range first 1 (where site.RegularPages "Type" "posts") }}
+
+        <article class="featured">
+
+            <div class="article-category">
+                {{ with .Params.category }}
+                    {{ . }}
+                {{ else }}
+                    ESSAY
+                {{ end }}
+            </div>
+
+            <h2>
+                <a href="{{ .RelPermalink }}">
+                    {{ .Title }}
+                </a>
+            </h2>
+
+            <p class="article-meta">
+                By Hannibal Lecter · {{ .Date.Format "02 January 2006" }}
+            </p>
+
+            <p class="excerpt">
+                {{ .Summary }}
+            </p>
+
+            <a class="read-more" href="{{ .RelPermalink }}">
+                CONTINUE READING →
+            </a>
+
+        </article>
+
+        {{ else }}
+
+        <article class="featured">
+
+            <div class="article-category">
+                FIRST EDITION
+            </div>
+
+            <h2>
+                Welcome to the Abyss
+            </h2>
+
+            <p class="article-meta">
+                By Hannibal Lecter · {{ now.Format "02 January 2006" }}
+            </p>
+
+            <p class="excerpt">
+                Every publication must begin somewhere. This is ours.
+                Notes from the Abyss is a place for observations,
+                questions and essays about the human condition.
+            </p>
+
+        </article>
+
+        {{ end }}
+
+    </section>
+
+    <aside class="side-column">
+
+        <div class="side-heading">
+            FROM THE EDITOR
+        </div>
+
+        <p>
+            We live surrounded by noise. These are notes written
+            in the intervals between it.
+        </p>
+
+        <p>
+            Literature, philosophy, technology and the peculiar
+            psychology of ordinary life.
+        </p>
+
+        <div class="quote">
+            "One must imagine Sisyphus happy."
+        </div>
+
+        <div class="quote-source">
+            — Albert Camus
+        </div>
+
+    </aside>
+
+</div>
+
+<section class="latest">
+
+    <div class="section-heading">
+        LATEST DISPATCHES
+    </div>
+
+    {{ range first 6 (where site.RegularPages "Type" "posts") }}
+
+    <article class="dispatch">
+
+        <div>
+            <span class="dispatch-category">
+                {{ .Params.category | default "ESSAY" }}
+            </span>
+
+            <h3>
+                <a href="{{ .RelPermalink }}">
+                    {{ .Title }}
+                </a>
+            </h3>
+        </div>
+
+        <div class="dispatch-date">
+            {{ .Date.Format "02.01.2006" }}
+        </div>
+
+    </article>
+
+    {{ end }}
+
+</section>
+
+{{ end }}

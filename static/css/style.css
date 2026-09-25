@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+    --paper: #f4f0e6;
+    --ink: #171717;
+    --muted: #666158;
+    --rule: #252525;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Libre Baskerville", Georgia, serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.masthead {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 30px 0;
+    text-align: center;
+}
+
+.topline {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 7px 0;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.masthead-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(45px, 8vw, 92px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin: 28px 0 12px;
+}
+
+.subtitle {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--muted);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 25px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.edition {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 30px 45px;
+    text-align: center;
+}
+
+.edition-label,
+.article-category,
+.side-heading,
+.section-heading {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 7vw, 82px);
+    margin: 15px 0;
+    line-height: 1;
+}
+
+.hero-description {
+    max-width: 680px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.newspaper-grid {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 45px;
+}
+
+.main-column {
+    border-top: 2px solid var(--ink);
+}
+
+.featured {
+    padding: 30px 0;
+}
+
+.featured h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.05;
+    margin: 12px 0;
+}
+
+.article-meta {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.excerpt {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+.read-more {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.side-column {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 30px 0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.side-heading {
+    margin-bottom: 20px;
+}
+
+.quote {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--rule);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.quote-source {
+    margin-top: 10px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.latest {
+    max-width: 1140px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+
+.section-heading {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 10px 0;
+}
+
+.dispatch {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #aaa49a;
+}
+
+.dispatch h3 {
+    margin: 5px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 25px;
+}
+
+.dispatch-category {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.dispatch-date {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+footer {
+    max-width: 1140px;
+    margin: 100px auto 30px;
+    padding: 0 30px;
+    text-align: center;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.footer-rule {
+    border-top: 2px solid var(--ink);
+}
+
+.byline,
+.copyright {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+
+    .masthead {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .masthead-title {
+        letter-spacing: -2px;
+    }
+
+    .topline {
+        font-size: 9px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 18px;
+        font-size: 11px;
+    }
+
+    .edition {
+        padding: 45px 20px 35px;
+    }
+
+    .newspaper-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .latest {
+        padding: 0 20px;
+    }
+
+    .featured h2 {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,9 @@
+
+baseURL = "https://charondx69.github.io/"
+languageCode = "en-us"
+title = "Notes from the Abyss"
+theme = "abyss-paper"
+
+[params]
+  author = "Hannibal Lecter"
+  description = "A journal of thought, observation, literature and the human condition."
