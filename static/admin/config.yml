@@ -1,0 +1,37 @@
+backend:
+  name: turbo-github
+  turbo_site_id: edbf184d-ea6b-4ad9-9bab-747d3bedca41
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Articles"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+
+      - label: "Category"
+        name: "category"
+        widget: "string"
+        required: false
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "Article"
+        name: "body"
+        widget: "markdown"
