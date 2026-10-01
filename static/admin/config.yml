@@ -32,6 +32,41 @@ collections:
         widget: "text"
         required: false
 
+      - label: "Article font"
+        name: "article_font"
+        widget: "select"
+        default: "serif"
+        options:
+          - { label: "Editorial serif", value: "serif" }
+          - { label: "Clean sans serif", value: "sans" }
+        hint: "Choose the typeface for this article's body text."
+
+      - label: "Article text size"
+        name: "article_size"
+        widget: "select"
+        default: "comfortable"
+        options:
+          - { label: "Compact", value: "compact" }
+          - { label: "Comfortable", value: "comfortable" }
+          - { label: "Large", value: "large" }
+        hint: "Choose a readable body text size for this article."
+
       - label: "Article"
         name: "body"
-        widget: "markdown"
+        widget: "richtext"
+        modes: ["rich_text", "raw"]
+        buttons:
+          - bold
+          - italic
+          - strikethrough
+          - link
+          - heading-one
+          - heading-two
+          - heading-three
+          - quote
+          - bulleted-list
+          - numbered-list
+        editor_components:
+          - image
+          - code-block
+        hint: "Format headings, links, quotes, and lists. Insert images or code blocks from the editor toolbar."

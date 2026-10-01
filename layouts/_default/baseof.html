@@ -20,7 +20,7 @@
     <div class="topline">
         <span>VOL. I</span>
         <span>NO. 01</span>
-        <span>{{ upper (now.Format "02 January 2006") }}</span>
+        <time id="current-date"></time>
     </div>
 
     <div class="masthead-title">
@@ -60,6 +60,26 @@
     </p>
 
 </footer>
+
+<script>
+    function updateCurrentDate() {
+        const currentDate = document.getElementById("current-date");
+        if (!currentDate) return;
+
+        currentDate.textContent = new Intl.DateTimeFormat("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        }).format(new Date()).toUpperCase();
+
+        const now = new Date();
+        const nextMidnight = new Date(now);
+        nextMidnight.setHours(24, 0, 0, 0);
+        window.setTimeout(updateCurrentDate, nextMidnight - now);
+    }
+
+    updateCurrentDate();
+</script>
 
 </body>
 </html>

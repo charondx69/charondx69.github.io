@@ -20,7 +20,7 @@
 
     </header>
 
-    <div class="article-content">
+    <div class="article-content article-font-{{ .Params.article_font | default "serif" }} article-size-{{ .Params.article_size | default "comfortable" }}">
         {{ .Content }}
     </div>
 
