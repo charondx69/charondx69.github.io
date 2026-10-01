@@ -32,6 +32,12 @@ collections:
         widget: "text"
         required: false
 
+      - label: "Cover image"
+        name: "cover_image"
+        widget: "image"
+        required: false
+        hint: "Shown beside the article text and as a thumbnail on the homepage."
+
       - label: "Article font"
         name: "article_font"
         widget: "select"

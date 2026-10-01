@@ -20,8 +20,16 @@
 
     </header>
 
-    <div class="article-content article-font-{{ .Params.article_font | default "serif" }} article-size-{{ .Params.article_size | default "comfortable" }}">
-        {{ .Content }}
+    <div class="article-layout{{ with .Params.cover_image }} article-layout-with-cover{{ end }}">
+        {{ with .Params.cover_image }}
+        <figure class="article-cover">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        </figure>
+        {{ end }}
+
+        <div class="article-content article-font-{{ .Params.article_font | default "serif" }} article-size-{{ .Params.article_size | default "comfortable" }}">
+            {{ .Content }}
+        </div>
     </div>
 
 </article>

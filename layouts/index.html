@@ -19,33 +19,28 @@
 
         {{ range first 1 (where site.RegularPages "Type" "posts") }}
 
-        <article class="featured">
-
-            <div class="article-category">
-                {{ with .Params.category }}
-                    {{ . }}
-                {{ else }}
-                    ESSAY
-                {{ end }}
-            </div>
-
-            <h2>
-                <a href="{{ .RelPermalink }}">
-                    {{ .Title }}
-                </a>
-            </h2>
-
-            <p class="article-meta">
-                By Hannibal Lecter · {{ .Date.Format "02 January 2006" }}
-            </p>
-
-            <p class="excerpt">
-                {{ .Summary }}
-            </p>
-
-            <a class="read-more" href="{{ .RelPermalink }}">
-                CONTINUE READING →
+        <article class="featured{{ with .Params.cover_image }} featured-with-cover{{ end }}">
+            {{ with .Params.cover_image }}
+            <a class="featured-cover" href="{{ $.RelPermalink }}" aria-label="Read {{ $.Title }}">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}">
             </a>
+            {{ end }}
+
+            <div class="featured-copy">
+                <div class="article-category">
+                    {{ with .Params.category }}{{ . }}{{ else }}ESSAY{{ end }}
+                </div>
+
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+
+                <p class="article-meta">
+                    By Hannibal Lecter · {{ .Date.Format "02 January 2006" }}
+                </p>
+
+                <p class="excerpt">{{ .Summary }}</p>
+
+                <a class="read-more" href="{{ .RelPermalink }}">CONTINUE READING →</a>
+            </div>
 
         </article>
 
@@ -91,9 +86,15 @@
 
     {{ range first 6 (where site.RegularPages "Type" "posts") }}
 
-    <article class="dispatch">
+    <article class="dispatch{{ with .Params.cover_image }} dispatch-with-image{{ end }}">
 
-        <div>
+        {{ with .Params.cover_image }}
+        <a class="dispatch-cover" href="{{ $.RelPermalink }}" aria-label="Read {{ $.Title }}">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        </a>
+        {{ end }}
+
+        <div class="dispatch-copy">
             <span class="dispatch-category">
                 {{ .Params.category | default "ESSAY" }}
             </span>
