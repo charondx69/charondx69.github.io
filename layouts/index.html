@@ -33,13 +33,7 @@
 
                 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
-                <p class="article-meta">
-                    By Hannibal Lecter · {{ .Date.Format "02 January 2006" }}
-                </p>
-
-                <p class="excerpt">{{ .Summary }}</p>
-
-                <a class="read-more" href="{{ .RelPermalink }}">CONTINUE READING →</a>
+                <p class="excerpt">{{ .Summary | plainify | htmlEscape | truncate 180 }}</p>
             </div>
 
         </article>
